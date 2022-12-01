@@ -167,7 +167,7 @@ function setRole(element) {
     var found;
     for (var i = 0; i < aTags.length; i++) {
         if (aTags[i].textContent == searchText) {
-        if (aTags[i].className !== "profileUsername") {
+        if (aTags[i].className !== "profileUsername" && aTags[i].className !== "previewUsername") {
                 found = aTags[i];
                 found.innerHTML = `<span class="roleEmoji" style="background: linear-gradient(315deg, #664229, #987554" title="Paintop Creator">💩</span> ` + found.innerHTML
             }
