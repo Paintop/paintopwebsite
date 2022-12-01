@@ -113,7 +113,7 @@ async function setPage(name) {
     await pages[name]();
     let title = name;
     title = name.charAt(0).toUpperCase() + name.slice(1);
-    document.title = title + " | Photop";
+    document.title = title + " | Paintop";
   }
 }
 async function refreshPage() {
@@ -139,7 +139,7 @@ async function refreshPage() {
     await pages[currentPage]();
     let title = currentPage;
     title = currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
-    document.title = title + " | Photop";
+    document.title = title + " | Paintop";
   }
 }
 function goBack() {
