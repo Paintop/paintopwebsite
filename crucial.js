@@ -47,7 +47,7 @@ let main = findC("main");
 let pageHolder = findC("pageHolder");
 let sidebarButtons = findI("sidebarButtons");
 
-let ingUI = findI("connectingDisplay");
+let connectingUI = findI("connectingDisplay");
 socket.onopen = function() {
   connectingUI.style.display = "none";
   recentUsers = {};
@@ -127,7 +127,7 @@ async function setPage(name) {
     await pages[name]();
     let title = name;
     title = name.charAt(0).toUpperCase() + name.slice(1);
-    document.title = title + " | Paintop";
+    document.title = title + " | Photop";
   }
 }
 async function refreshPage() {
@@ -153,7 +153,7 @@ async function refreshPage() {
     await pages[currentPage]();
     let title = currentPage;
     title = currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
-    document.title = title + " | Paintop";
+    document.title = title + " | Photop";
   }
 }
 function goBack() {
@@ -218,6 +218,7 @@ function getScript(url) {
   return document.querySelector("[src='" + url + "'");
 }
 async function loadScript(url) {
+	url = url.replace('./', 'https://app.photop.live/')
   return new Promise(function(resolve) {
     let loaded = getScript(url);
     if (loaded) {
